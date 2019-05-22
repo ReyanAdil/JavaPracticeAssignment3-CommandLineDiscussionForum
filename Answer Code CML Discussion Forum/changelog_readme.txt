@@ -44,3 +44,23 @@ Note: All new comments added are in Block Letters for easy identification
 		addUpvote(Reply, User)
 		addUpvote(Question, User)
 ---------------------------------------------------------------------
+5. 	If a question was deleted, the code was not updating the ID of the 
+	following questions after that.
+	For example:
+	1. Question Title - write
+	Question - how to write
+	2. Question Title - read
+	Question - how to read
+	3. Question Title - remember
+	Question Title - how to remember
+	
+	If I deleted the 2nd Question and printed all the questions again it would show
+	1. Question Title - write
+	Question - how to write
+	3. Question Title - remember
+	Question Title - how to remember
+
+	Changes made in QuestionServiceImpl.java to following methods of class
+	QuestionServiceImpl:
+		deleteQuestion(Question)
+---------------------------------------------------------------------
